@@ -194,3 +194,62 @@ body { background: var(--bg-app); color: var(--text-main); min-height: 100vh; ov
   .login-form-side { flex: 1; }
 }
 
+
+/* --- Ultimate Mobile Optimization --- */
+@media (max-width: 1024px) {
+  :root { --header-h: 70px; }
+  
+  .main-wrapper { margin-left: 0; }
+  .header { left: 0; width: 100%; }
+  
+  .sidebar-container {
+    position: fixed; left: -100%; top: 0; bottom: 0;
+    width: var(--sidebar-w); z-index: 3000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .sidebar-container.open { left: 0; box-shadow: 20px 0 50px rgba(0,0,0,0.2); }
+  
+  .sidebar-overlay {
+    position: fixed; inset: 0; background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px); z-index: 2500;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  
+  .sidebar-overlay.open { opacity: 1; pointer-events: auto; }
+  
+  .mobile-menu-btn {
+    display: flex !important; width: 42px; height: 42px;
+    align-items: center; justify-content: center;
+    background: white; border-radius: 12px; border: 1px solid var(--border);
+    color: var(--text-main); margin-right: 1rem;
+  }
+  
+  .header-actions {
+    flex-direction: column; gap: 1rem; padding: 1rem;
+    margin-bottom: 1.5rem; border-radius: 16px;
+  }
+  
+  .filters { flex-direction: column; width: 100%; }
+  .search-bar { max-width: 100%; }
+  .filter-group select { width: 100%; }
+  .primary-btn { width: 100%; justify-content: center; }
+  
+  .main-content { padding: calc(var(--header-h) + 1rem) 1rem 5rem 1rem; }
+  
+  .inventory-stats, .maintenance-stats {
+    grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important;
+  }
+  
+  .m-stat-card { padding: 1rem !important; flex-direction: column; text-align: center; }
+  .m-stat-icon { width: 36px !important; height: 36px !important; margin-bottom: 0.5rem; }
+  .m-stat-info h4 { font-size: 1.1rem !important; }
+}
+
+@media (max-width: 640px) {
+  .inventory-stats, .maintenance-stats { grid-template-columns: 1fr !important; }
+  .header-title h2 { font-size: 1.1rem; }
+  .user-info { display: none; } /* Hide user info on small mobile to save space */
+  .header-tools { display: none; }
+}
+

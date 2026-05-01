@@ -18,7 +18,7 @@ const Header = ({ title, user, toggleSidebar, isSidebarOpen, onLogout }) => {
   return (
     <header className="header fade-in">
       <div className="header-left">
-        <button className="mobile-menu-btn" onClick={toggleSidebar} style={{ display: 'none' }}>
+        <button className="mobile-menu-btn" onClick={toggleSidebar}>
           {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         <div className="header-title">
