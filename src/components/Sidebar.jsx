@@ -8,7 +8,8 @@ import {
   Building2,
   Users,
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  X
 } from 'lucide-react';
 import logo from '../assets/logo/logo.png';
 
