@@ -214,7 +214,18 @@ function App() {
   return (
     <div className="app-container">
       <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)} />
-      <div className={`sidebar-container ${isSidebarOpen ? 'open' : ''}`}><Sidebar activeView={activeView} setActiveView={(v) => { setActiveView(v); setIsSidebarOpen(false); }} onClose={() => setIsSidebarOpen(false)} user={user} onLogout={handleLogout} /></div>
+      <div className={`sidebar-container ${isSidebarOpen ? 'open' : ''}`}>
+        <Sidebar 
+          activeView={activeView} 
+          setActiveView={(v) => { 
+            setActiveView(v); 
+            setIsSidebarOpen(false); 
+          }} 
+          onClose={() => setIsSidebarOpen(false)} 
+          user={user} 
+          onLogout={handleLogout} 
+        />
+      </div>
       <div className="main-wrapper">
         <Header title={getTitle()} user={user} toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} isSidebarOpen={isSidebarOpen} onLogout={handleLogout} />
         <main className="main-content">
