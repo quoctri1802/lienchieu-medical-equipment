@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import logo from '../assets/logo/logo.png';
 
-const Sidebar = ({ activeView, setActiveView, user, onLogout }) => {
+const Sidebar = ({ activeView, setActiveView, user, onLogout, onClose }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Tổng quan', icon: LayoutDashboard },
     { id: 'inventory', label: 'Thiết bị y tế', icon: Package },
@@ -35,7 +35,7 @@ const Sidebar = ({ activeView, setActiveView, user, onLogout }) => {
             <span>Equipment Manager</span>
           </div>
         </div>
-        <button className="mobile-close-sidebar" onClick={() => setActiveView(activeView)} style={{ display: 'none' }}>
+        <button className="mobile-close-sidebar" onClick={onClose} style={{ display: 'none' }}>
           <X size={24} />
         </button>
       </div>
