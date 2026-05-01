@@ -253,3 +253,40 @@ body { background: var(--bg-app); color: var(--text-main); min-height: 100vh; ov
   .header-tools { display: none; }
 }
 
+
+/* --- Refined Compact Stats for Mobile --- */
+@media (max-width: 640px) {
+  .stats-grid, .inventory-stats, .maintenance-stats {
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .premium-card, .m-stat-card {
+    padding: 0.75rem !important;
+    border-radius: 16px !important;
+  }
+  
+  .m-stat-icon, .stat-icon-box {
+    width: 32px !important; height: 32px !important;
+    min-width: 32px !important;
+  }
+  
+  .m-stat-icon svg, .stat-icon-box svg { width: 16px !important; height: 16px !important; }
+  
+  .m-stat-info h4, .stat-main h2 {
+    font-size: 1rem !important;
+    margin-top: 2px !important;
+  }
+  
+  .m-stat-info span, .stat-main span {
+    font-size: 0.6rem !important;
+    letter-spacing: 0;
+  }
+  
+  /* Prevent stats from being too dominant */
+  .dashboard-welcome { margin-bottom: 1.5rem !important; }
+  .welcome-text h1 { font-size: 1.3rem !important; }
+  .date-badge { display: none !important; }
+}
+
