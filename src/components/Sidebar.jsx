@@ -34,6 +34,9 @@ const Sidebar = ({ activeView, setActiveView, user, onLogout }) => {
             <span>Equipment Manager</span>
           </div>
         </div>
+        <button className="mobile-close-sidebar" onClick={() => setActiveView(activeView)} style={{ display: 'none' }}>
+          <X size={24} />
+        </button>
       </div>
 
       <nav className="sidebar-nav">

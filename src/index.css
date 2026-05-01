@@ -290,3 +290,35 @@ body { background: var(--bg-app); color: var(--text-main); min-height: 100vh; ov
   .date-badge { display: none !important; }
 }
 
+
+/* --- Mobile Sidebar Fixes --- */
+@media (max-width: 1024px) {
+  .sidebar-container {
+    width: 85% !important; /* Take most of screen but leave gap to see background */
+    max-width: 320px !important;
+  }
+  
+  .sidebar-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 2rem !important;
+  }
+  
+  .nav-item {
+    padding: 1.25rem !important; /* Larger touch targets */
+    font-size: 1rem !important;
+  }
+  
+  .sidebar-footer {
+    padding-bottom: 2rem !important;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .mobile-close-sidebar {
+    display: flex !important;
+    background: transparent; border: none; color: var(--text-muted);
+    cursor: pointer; padding: 0.5rem;
+  }
+}
+
